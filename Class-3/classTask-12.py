@@ -11,6 +11,7 @@ biology = int(input("Biology: "))
 
 print("\n")
 print("***************Education Board Bangladesh*********************")
+print("*******************Grade wise Result*********************")
 #Bangla Subject Marks Calculate Grade Point  using if else condition
 if bangla>=80 and bangla<=100 :
     point1 = 5.00
@@ -273,5 +274,6 @@ print("Your GPA: {:.2f}".format(cgpa))
 
 #Calculate the percentage Based on the total marks 
 percentage = (total_marks/900)*100
-print("Your Percentage: {:.2f}%".format(percentage))
+print("Your Percentage Marks is: {:.2f}%".format(percentage))
+print("\n")
 
