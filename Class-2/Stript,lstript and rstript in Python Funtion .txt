@@ -1,0 +1,34 @@
+strip function হল একটি  string funtion যেটি string থেকে অতিরিক্ত Character, Alphabet, Number,Space remove করে । strip function left and Right side উভয় দিকের Extra Character, Alphabet, Number, Space Remove করে এবং lstrip শুধুমাত্র left side-এর extra Character, Alphabet, Number, Space Remove করে  এবং Rstrip শুধুমাত্র  Right side-এর extra Character, Alphabet, Number,Space Remove করে    
+শুধুমাত্র left side এর extra Character, Alphabet, Number, Space Remove করে।
+নিম্নে strip funtion এর উদাহরন দেওয়া হলঃ
+যেমনঃ demo = "*********Towhid is a honest man***********"
+     stp = demo.strip('*')
+     print(stp)
+
+Output:Towhid is a honest man
+
+demo = "*********Towhid is a honest man0000000"
+     stp = demo.strip('*').strip('0')
+     print(stp)
+
+Output:Towhid is a honest man
+
+demo = "        Towhid is a honest man      "
+stp = demo.strip(" ")
+print(stp)
+ 
+Output:Towhid is a honest man
+
+ নিম্নে  lstrip funtion এর উদাহরন দেওয়া হলঃ
+যেমনঃ demo = "ssssssssTowhid is a honest man aaaaa"
+     stp = demo.lstrip('s')
+     print(stp)
+
+Output:Towhid is a honest man aaaaa
+
+ নিম্নে  rstrip funtion এর উদাহরন দেওয়া হলঃ
+যেমনঃ demo = "******Towhid is a honest man1111111111"
+     stp = demo.rstrip('1')
+     print(stp)
+
+Output:******Towhid is a honest man
