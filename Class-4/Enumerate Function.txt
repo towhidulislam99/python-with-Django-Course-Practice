@@ -1,0 +1,24 @@
+Python-এ enumerate() ফাংশনটি একটি সিকোয়েন্সের (like a list, tuple, or string) ইনডেক্স নাম্বার এবং প্রতিটি আইটেমের মান উভয়ের ট্র্যাক রাখার সময় পুনরাবৃত্তি করতে 
+ব্যবহৃত হয়। এটি  index number এবং index এর value উভয়কে sequence আকারে returns করে   ।
+যেমনঃ
+     for index, fruits in enumerate (fruits):
+
+for example:
+	    list = ["banana","apple","Orange","cherry"]
+	    for index, list in enumerate(list):
+	    print(f"Index: {index}: {list}")
+Output:
+	Index 0: banana
+	Index 1: apple
+	Index 2: Orange
+	Index 3: cherry
+চাইলে start() parameter এর মাধ্যমে index number এর starting value set করে দেওয়া যায়।
+যেমন:
+    list = ["banana","apple","Orange","cherry"]
+	    for index, list in enumerate(list, start=1):
+	    print(f"Index: {index}: {list}")
+Output:
+	Index 1: banana
+	Index 2: apple
+	Index 3: Orange
+	Index 4: cherry

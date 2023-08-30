@@ -1,0 +1,83 @@
+পাইথনে zip() ফাংশন হল একটি অন্তর্নির্মিত ফাংশন যা যেকোনো সংখ্যক পুনরাবৃত্তিযোগ্য (list,tuple,str, etc) একটি আর্গুমেন্ট হিসাবে নেয় এবং আর্গুমেন্ট হিসাবে পাস করা প্রতিটি পুনরাবৃত্তিযোগ্য
+থেকে উপাদান নিয়ে তাদের একত্রিত করে। এটি তখন execution বন্ধ করে দেয় যখন কম সংখ্যক data execution শেষ হয়ে যায় এবং বেশি সংখ্যক ডাটা গুলো বাদ পড়ে যায়।এটি বেশিরভাগই একাধিক 
+পুনরাবৃত্তির মাধ্যমে পুনরাবৃত্তি করতে ব্যবহৃত হয়।
+যেমন:
+    countries = ["Bangladesh", "UK", "USA", "Canada"]
+    capitals = ["Dhaka", "London", "Washington DC", "Ottawa"]
+
+    country_capital = zip(countries, capitals)
+
+    print(country_capital)
+    print(list(country_capital))
+Output:
+	<zip object at 0x7fce6586fb40>
+	[('Bangladesh', 'Dhaka'), ('UK', 'London'), ('USA', 'Washington DC'), ('Canada', 'Ottawa')]
+
+আরও একটি উদাহরন দেখা যাকঃ
+  employee_id = [1,2,3,4,5]
+  employee_name =["Towhid","Shourove","Ahad","Rahat","Rahman"]
+  emp_salary = [25000,30000,35000,40000,50000]
+
+  emp_info = zip(employee_id,employee_name,emp_salary)
+  print(list(emp_info))
+Output:
+	[(1, 'Towhid', 25000), (2, 'Shourove', 30000), (3, 'Ahad', 35000), (4, 'Rahat', 40000), (5, 'Rahman', 50000)]
+
+এখানে শুধুমাত্র লিস্ট আকারে দেখানো হয়েছে।
+
+For Loop এর মাধ্যমে zip()function এর ডাটা execution এর একটি উদাহরন দেওয়া হলঃ
+
+	employee_id = [1,2,3,4,5]
+	employee_name =["Towhid","Shourove","Ahad","Rahat","Rahman"]
+	employee_salary = [25000,30000,35000,40000,50000]
+	emp_info = zip(employee_id,employee_name,emp_salary)
+
+	for emp_id, emp_name, emp_salary in emp_info:
+   		print ("Employee_Id : ", emp_id, " Emploree_Name: ", emp_name, " Employee_salary: ", emp_salary)
+
+Output:
+	Employee_Id :  1  Emploree_Name:  Towhid  Employee_salary:  25000
+	Employee_Id :  2  Emploree_Name:  Shourove  Employee_salary:  30000
+	Employee_Id :  3  Emploree_Name:  Ahad  Employee_salary:  35000
+	Employee_Id :  4  Emploree_Name:  Rahat  Employee_salary:  40000
+	Employee_Id :  5  Emploree_Name:  Rahman  Employee_salary:  50000
+
+Python zip() ফাংশন দিয়ে জিপড ফাইলকে আনজিপ করে ডাটা access করার একটি  উদাহরনঃ
+
+	# Python code to explain working of zip() function
+	# initializing lists
+	employee_id = [1,2,3,4,5]
+	employee_name =["Towhid","Shourove","Ahad","Rahat","Rahman"]
+	employee_salary = [25000,30000,35000,40000,50000]
+	# zip() to create zip object
+	emp_info = zip(employee_id,employee_name,employee_salary)
+
+	# Convert zipped bject as set
+	emp_info = set(emp_info)
+	print("The zipped Output: ", emp_info)
+
+	# Unzipped the values in different list
+	e_id, e_name, e_salary = zip(*emp_info)
+
+	# Print lists
+	print("Employee ID", e_id)
+	print("Employee Name: ", e_name)
+	print("Employee Salary", e_salary)
+
+Output:
+	The zipped Output:  {(1, 'Towhid', 25000), (2, 'Shourove', 30000), (4, 'Rahat', 40000), (3, 'Ahad', 35000), (5, 'Rahman', 50000)}    
+	Employee ID (1, 2, 4, 3, 5)
+	Employee Name:  ('Towhid', 'Shourove', 'Rahat', 'Ahad', 'Rahman')
+	Employee Salary (25000, 30000, 40000, 35000, 50000)
+
+যদি ভিন্ন দৈর্ঘ্যের দুটি iterator অথবা list থাকে, তবে সর্বনিম্ন উপাদান সহ iterator অথবা list টি হবে নতুন পুনরাবৃত্তির দৈর্ঘ্য অথ্যাৎ সর্বনিম্ন  value যে list-এ থাকবে ঐ লিস্টে যে 
+কয়টি value থাকবে সে কয়টি value count করে বাকি list গুলো থেকে ঐ কয়টি value নিয়ে প্রিন্ট করবে।
+নিম্নে উদাহরন দেওয়া হল:
+	employee_id = [1,2,3,4,5,6,7]
+	employee_name =["Towhid","Shourove","Ahad","Rahat","Rahman"]
+	emp_salary = [25000,30000,35000,40000,50000,3000,]
+
+	emp_info = zip(employee_id,employee_name,emp_salary)
+	print(list(emp_info))
+Output:
+	[(1, 'Towhid', 25000), (2, 'Shourove', 30000), (3, 'Ahad', 35000), (4, 'Rahat', 40000), (5, 'Rahman', 50000)]
