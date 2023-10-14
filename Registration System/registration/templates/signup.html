@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/style1.css' %}">
+    <title>Signup Form Design by Towhid</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup Forms</h2>
+        <div class="form-container">
+            <form action="{% url 'user_info' %}" method="POST">
+                {%csrf_token%}
+               <div class="input-name">
+                <i class="fa fa-user lock"></i>
+                <input type="text" placeholder="First Name" class="fname" name="fname" required>
+                <span>
+                <i class="fa fa-user lock"></i>
+                <input type="text" placeholder="Last Name" class="lname" name="lname" required>
+                </span>
+               </div>
+
+               <div class="input-name">
+                <i class="fa fa-envelope lock" ></i>
+                <input type="text" placeholder="Email" class="email" name="email" required>
+               </div>
+                
+               <div class="input-name">
+                <i class="fa fa-lock lock"></i>
+                <input type="password" placeholder="Password" class="password" name="password" required>
+               </div>
+
+               <div class="input-name">
+                <i class="fa fa-lock lock"></i>
+                <input type="password" placeholder="Confirm Password" class="confirmpassword" name="confirmpassword" required>
+               </div>
+
+               <div class="input-name">
+                <input type="radio" class="radio-button" name="r1" value="male">
+                <label style="margin-right: 30px" for="radio">Male</label>
+
+                <input type="radio" class="radio-button" name="r1" value="female">
+                <label style="margin-right: 30px" for="radio">Female</label>
+
+                <input type="radio" class="radio-button" name="r1" value="others">
+                <label for="radio">Others</label>
+               </div>
+
+               <div class="input-name">
+                <select  class="occupation"name="occupation" id="select-option">
+                    <option value="selected option">Select Occupation</option>
+                    <option value="student">Student</option>
+                    <option value="job holder">Job Holder</option>
+                    <option value="businessman">Businessman</option>
+                    <option value="engineer">Engineer</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="others">Others</option>
+                </select>
+               <div class="arrow"></div>
+            </div>
+               <div class="input-name">
+                <input type="checkbox" name="checkbox" id="cb" value="True" class="check-button" required>
+                <label class="check" for="cb">I accept all terms and condition</label>
+               </div>
+
+               <div class="input-name">
+                <input type="submit" name="submit" id="" class="button" value="Signup">
+               </div>
+
+
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>

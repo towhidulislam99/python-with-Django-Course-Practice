@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    /* Apply styles to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table img {
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Auto-adjust the height to maintain aspect ratio */
+}
+table video {
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Auto-adjust the height to maintain aspect ratio */
+}
+
+/* Style table headers */
+th {
+    background-color: #080000;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style table cells */
+td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style odd rows with a different background color */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Style the table header row */
+thead tr {
+    background-color: #333;
+    color: #fff;
+}
+
+</style>
+    
+</head>
+<body>
+    <h1>Welcome to User Form</h1>
+    <form action="{% url 'user_index' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="">Name</label>
+        <input type="text" name="name" id=""><br><br>
+        <label for="">Email</label>
+        <input type="text" name="email" id=""><br><br>
+        <label for="">Upload Image</label>
+        <input type="file" name="image" class="image" id=""><br><br>
+        <label for="">Upload Videos</label>
+        <input type="file" name="video" class="video" id=""><br><br>
+
+        <input type="submit" name="" id="" value="Submit"><br>
+    </form>
+
+    <h1>Output Sample Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Image</th>
+                <th>Video File</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in user_data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td><img src="/media/{{i.image}}" alt="no igame"></td>
+                <td>
+                    <video width="320" height="240" controls>
+                        <source src="/media/{{ i.video }}" alt="No Videos" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </td>
+                <td><a href="{% url 'edit_index' i.id %}" target = "blank">Edit </a><a href="{% url 'delete_index' i.id %}"> Delete</a></td>
+            </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

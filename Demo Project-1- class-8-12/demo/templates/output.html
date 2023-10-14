@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="tablestyle.css">
+
+    <style>
+        /* Apply styles to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style table headers */
+th {
+    background-color: #080000;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style table cells */
+td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style odd rows with a different background color */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Style the table header row */
+thead tr {
+    background-color: #333;
+    color: #fff;
+}
+    </style>
+</head>
+<body>
+    <h1>Output Sample Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in user_data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td><img src="{{i.image.url}}" alt="no igame"></td>
+            </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

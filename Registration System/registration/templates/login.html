@@ -1,0 +1,63 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/style.css' %}">
+    
+    <title>Log in Form</title>
+</head>
+<body>
+
+    <div class=" box">
+        <div class="container">
+            <div class="top-header">
+                <header>Login</header>
+            </div>
+
+            <form action="{% url 'login' %}" method="POST">
+              {% csrf_token %}
+
+            <div class="input-field">
+            <label for="email">Enter Email here</label>
+            <input type="text" class="input" placeholder="Email" name="email" required>
+            <i class='bx bx-user'></i>
+            </div>
+
+            <div class="input-field">
+                <label for="password">Password Here</label>
+                <input type="password" class="input" placeholder="Password" name="password" required>
+                <i class="bx bx-lock-alt"></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="submit" class="submit" value="Login">
+                    </div>
+                  </form>
+
+                <div class="bottom">
+                  <div class="left">
+                    <input type="checkbox" id= "check">
+                    <label for="check">Remember Me</label>
+                  </div>  
+                  <div class="right">
+                    <label><a href="#">Forgot Password?</a></label> 
+                  </div>
+                  
+                </div>
+                <br>
+                  <br>
+                <div class="footer" name="footer">
+                  <label><a href="#">Have an account?</a></label> 
+                </div>
+        </div>
+    </div>
+    
+</body>
+</html>

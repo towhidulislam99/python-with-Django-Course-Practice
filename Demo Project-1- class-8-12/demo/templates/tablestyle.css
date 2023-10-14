@@ -1,0 +1,32 @@
+/* Apply styles to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style table headers */
+th {
+    background-color: #080000;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style table cells */
+td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style odd rows with a different background color */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Style the table header row */
+thead tr {
+    background-color: #333;
+    color: #fff;
+}
